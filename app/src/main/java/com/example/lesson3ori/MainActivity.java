@@ -79,14 +79,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
-        if(pos != 0)
-        {
+        if (pos != 0) {
+            ls.setVisibility(View.VISIBLE);
+
             ArrayAdapter<String> adp = new ArrayAdapter<String>(this
-                    ,R.layout.support_simple_spinner_dropdown_item,countries[pos-1]);
+                    , R.layout.support_simple_spinner_dropdown_item, countries[pos - 1]);
             row = pos;
             ls.setAdapter(adp);
             ls.setOnItemClickListener(this);
+        } else
+        {
+            ls.setVisibility(View.GONE);
         }
+
         row = pos-1;
     }
 
