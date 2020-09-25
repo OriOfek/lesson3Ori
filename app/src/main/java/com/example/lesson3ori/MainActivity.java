@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         languge = (TextView) findViewById(R.id.lang);
         poplation = (TextView) findViewById(R.id.pop);
         nationalSong = (TextView) findViewById(R.id.song);
-        lands = new String[]{"Africa","Europe","Asia","America"};
+        lands = new String[]{"","Africa","Europe","Asia","America"};
         countries = new String[][]{{"Nigeria","Ethiopia","Egypt","South Africa","Kenya","Uganda","Algeria"},
                 {"Russia","Germany","United Kingdom","France","Italy","Spain","Ukraine"},
                 {"China","India","Indonesia","Pakistan","Bangladesh","Japan","Philippines"}
@@ -72,17 +72,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 ,R.layout.support_simple_spinner_dropdown_item,lands);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sn.setAdapter(adapter);
-
         sn.setOnItemSelectedListener(this);
+
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
-        ArrayAdapter<String> adp = new ArrayAdapter<String>(this
-                ,R.layout.support_simple_spinner_dropdown_item,countries[pos]);
-        row = pos;
-        ls.setAdapter(adp);
-        ls.setOnItemClickListener(this);
+        if(pos != 0)
+        {
+            ArrayAdapter<String> adp = new ArrayAdapter<String>(this
+                    ,R.layout.support_simple_spinner_dropdown_item,countries[pos-1]);
+            row = pos;
+            ls.setAdapter(adp);
+            ls.setOnItemClickListener(this);
+        }
+        row = pos-1;
     }
 
     @Override
