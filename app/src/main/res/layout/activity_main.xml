@@ -10,9 +10,14 @@
         android:id="@+id/ls"
         android:layout_width="0px"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="0.7">
 
     </ListView>
+
+    <Space
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1" />
 
     <LinearLayout
         android:layout_width="0px"
@@ -47,25 +52,27 @@
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:hint="poplation" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="0.2" />
 
             <TextView
                 android:id="@+id/lang"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:hint="languge" />
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="0.2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,18 +85,20 @@
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:hint="anthem" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="0.2" />
 
             <TextView
                 android:id="@+id/cap"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:hint="capitel" />
         </LinearLayout>
 
