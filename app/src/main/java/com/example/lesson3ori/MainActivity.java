@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView nationalSong;
     String[] lands;
     int row;
+    ArrayAdapter<String> adp;
     String[][] countries;
     String[][][] info;
 
@@ -68,13 +69,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 {"English and French","37.971M","O Canada","Ottawa" },
                 {"Spanish","32.824M","Himno Nacional del Perú","Lima" }}}; //contains{   { country1{languge,poplation,song,capitel} country2{things}  }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this
+        adp = new ArrayAdapter<String>(this
                 ,R.layout.support_simple_spinner_dropdown_item,lands);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sn.setAdapter(adapter);
+        sn.setAdapter(adp);
         sn.setOnItemSelectedListener(this);
-
-
     }
 
     @Override
@@ -82,14 +80,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (pos != 0) {
             ls.setVisibility(View.VISIBLE);
 
-            ArrayAdapter<String> adp = new ArrayAdapter<String>(this
+            adp = new ArrayAdapter<String>(this
                     , R.layout.support_simple_spinner_dropdown_item, countries[pos - 1]);
             row = pos;
             ls.setAdapter(adp);
             ls.setOnItemClickListener(this);
         } else
         {
-            ls.setVisibility(View.GONE);
+            ls.setVisibility(View.INVISIBLE);
+            capitel.setText("");
+            poplation.setText("");
+            nationalSong.setText("");
+            languge.setText("");
         }
 
         row = pos-1;
@@ -97,16 +99,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
-
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         capitel.setText("capital = " + info[row][i][3]);
         poplation.setText("population = " + info[row][i][1]);
         nationalSong.setText("anthem = " + info[row][i][2]);
         languge.setText("language  = " + info[row][i][0]);
-
-
     }
 }
