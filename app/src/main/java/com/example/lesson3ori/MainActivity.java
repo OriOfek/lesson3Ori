@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             row = pos;
             ls.setAdapter(adp);
             ls.setOnItemClickListener(this);
-        } else
+        }
+        else
         {
             ls.setVisibility(View.INVISIBLE);
             capital.setText("");
