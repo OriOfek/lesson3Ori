@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         language = (TextView) findViewById(R.id.lang);
         population = (TextView) findViewById(R.id.pop);
         nationalSong = (TextView) findViewById(R.id.song);
-        lands = new String[]{"","Africa","Europe","Asia","America"};
+        lands = new String[]{"continent","Africa","Europe","Asia","America"};
         countries = new String[][]{{"Nigeria","Ethiopia","Egypt","South Africa","Kenya","Uganda","Algeria"},
                 {"Russia","Germany","United Kingdom","France","Italy","Spain","Ukraine"},
                 {"China","India","Indonesia","Pakistan","Bangladesh","Japan","Philippines"}
