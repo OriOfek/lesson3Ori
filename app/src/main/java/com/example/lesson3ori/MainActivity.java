@@ -89,11 +89,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else
         {
             ls.setVisibility(View.INVISIBLE);
-            capital.setText("");
-            population.setText("");
-            nationalSong.setText("");
-            language.setText("");
         }
+        capital.setText("");
+        population.setText("");
+        nationalSong.setText("");
+        language.setText("");
 
         row = pos-1;
     }
