@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 {"English and Spanish","50.372M","Himno Nacional de la República de Colombia","Bogotá" },
                 {"None(there are many languages)","44.938M","Himno Nacional Argentino","Buenos Aires" },
                 {"English and French","37.971M","O Canada","Ottawa" },
-                {"Spanish","32.824M","Himno Nacional del Perú","Lima" }}}; //contains{   { country1{languge,poplation,song,capitel} country2{things}  }
+                {"Spanish","32.824M","Himno Nacional del Perú","Lima" }}};
+        //world { continent{   { country1{languge,poplation,song,capitel} ,country2{things}....}, continent{}  }
 
         adp = new ArrayAdapter<String>(this
                 ,R.layout.support_simple_spinner_dropdown_item,lands);
